@@ -79,8 +79,8 @@ class BPSHOP_Loader
 
 		self::constants();
 		
-		//So far, the pages are still needed and should not be deleted
-		//register_activation_hook( self::$plugin_name, array( __CLASS__, 'activate' ) );
+		register_activation_hook( self::$plugin_name, array( __CLASS__, 'activate'  ) );
+		register_uninstall_hook(  self::$plugin_name, array( __CLASS__, 'uninstall'	) );
 		
 		add_action( 'init', 			array( __CLASS__, 'translate' 			) );
 		add_action( 'plugins_loaded', 	array( __CLASS__, 'check_requirements' 	) );
@@ -181,6 +181,17 @@ class BPSHOP_Loader
 	{
 		include_once( dirname( __FILE__ ) .'/admin/bpshop-activate.php' );
 		bpshop_activate();
+	}
+	
+	/**
+	 * Runs when the plugin is uninstalled
+	 * 
+	 * @since 	1.0
+	 */
+	public function uninstall()
+	{
+		include_once( dirname( __FILE__ ) .'/admin/bpshop-activate.php' );
+		bpshop_cleanup();
 	}
 		
 	/**

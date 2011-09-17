@@ -56,4 +56,58 @@ function bpshop_load_template( $template_name )
 
 	include( $located );
 }
+
+/**
+ * Get the tracking page id
+
+ * @todo	Check regularly if there is a db option
+ * @since 	1.0
+ */
+function bpshop_get_tracking_page_id()
+{
+	global $wpdb;
+	
+	return $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_name = 'order-tracking' LIMIT 1" ) );
+}
+
+/**
+ * Exclude all Jigoshop pages from the main nav
+ * 
+ * Only used in default theme and possibly child themes
+ * if no custom menu is defined for the top navigation
+ * 
+ * @since 1.0
+ */
+function bpshop_exclude_pages_navigation( $args )
+{
+	$jigo_pages = array(
+		bp_get_option( 'jigoshop_cart_page_id' ),
+		bp_get_option( 'jigoshop_checkout_page_id' ),
+		bp_get_option( 'jigoshop_view_order_page_id' ),
+		bp_get_option( 'jigoshop_edit_address_page_id' ),
+		bp_get_option( 'jigoshop_myaccount_page_id' ),
+		bp_get_option( 'jigoshop_pay_page_id' ),
+		bp_get_option( 'jigoshop_thanks_page_id' ),
+		bp_get_option( 'jigoshop_change_password_page_id' ),
+		bpshop_get_tracking_page_id()
+	);
+	
+	$args['exclude'] = join( ',', $jigo_pages );
+	
+	return $args;
+}
+add_filter( 'wp_page_menu_args', 'bpshop_exclude_pages_navigation' );
+
+/**
+ * Adjust the checkout url to point to the profile
+ * 
+ * @since 1.0
+ */
+function bpshop_checkout_url( $url )
+{
+	$url = bp_loggedin_user_domain() .'shop/checkout/';
+	
+	return $url;
+}
+add_filter( 'jigoshop_get_checkout_url', 'bpshop_checkout_url' );
 ?>

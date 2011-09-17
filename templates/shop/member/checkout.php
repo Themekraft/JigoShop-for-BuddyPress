@@ -15,14 +15,23 @@
 	<div class="item-list-tabs no-ajax" id="subnav">
 		<ul>
 			<?php bp_get_options_nav(); ?>
-			<?php do_action( 'bpshop_member_options_nav' ); ?>
+			<?php do_action( 'bpshop_member_options_nav'	 ); ?>
 		</ul>
 	</div><!-- .item-list-tabs -->
 
-	<h3><?php _e( 'Checkout', 'bpshop' ); ?></h3>
+	<?php
+	if( bpshop_is_subpage( 'pay' ) ) :
+		bpshop_load_template( 'shop/member/checkout/pay'	 );
 
-	<?php bp_shop_jigo_checkout(); ?>
-
+	elseif( bpshop_is_subpage( 'thanks' ) ) :
+		bpshop_load_template( 'shop/member/checkout/thanks'  );
+		
+	else :
+		bpshop_load_template( 'shop/member/checkout/general' );
+		
+	endif;
+	?>
+	
 	<?php do_action( 'bpshop_after_member_body' ); ?>
 
 </div><!-- #item-body -->

@@ -15,79 +15,94 @@ class BPSHOP_Redirect
 {
 	/**
 	 * Initialize the redirects
+	 * 
+	 * Attached to the <code>page_link</code> filter hook
 	 *
+	 * @todo	Collaborate with the Jigoshop team to reduce the many db calls on
+	 * 			every page load (bp_get_option/get_blog_option does caching, though)
 	 * @since 	1.0
+	 * @uses	add_filter()
 	 */
 	public function init()
 	{
-		add_action( 'wp', array( __CLASS__, 'cart_url' 		), 0 );
-		add_action( 'wp', array( __CLASS__, 'checkout_url' 	), 0 );
-		add_action( 'wp', array( __CLASS__, 'remove_url' 	), 0 );
-		add_action( 'wp', array( __CLASS__, 'track_order' 	), 0 );
+		add_filter( 'page_link', array( __CLASS__, 'router' ), 10, 2 );
 	}
 	
 	/**
-	 * Redirect to the profile cart
+	 * Link router function
 	 *
 	 * @since 	1.0
+	 * @uses	bp_get_option()
+	 * @uses	is_page()
+	 * @uses	bp_loggedin_user_domain()
 	 */
-	public function cart_url()
-	{		
-		$cart_page_id = get_option( 'jigoshop_cart_page_id' );
-		
-		if( is_page( $cart_page_id ) )
-		{
-			bp_core_redirect( bp_loggedin_user_domain() .'shop/cart/' );
-		}
-	}
-	
-	/**
-	 * Redirect to the profile checkout page
-	 *
-	 * @since 	1.0
-	 */
-	public function checkout_url()
+	public static function router( $link, $id )
 	{
-		$checkout_page_id = get_option( 'jigoshop_checkout_page_id' );
+		global $bp;
 		
-		if( is_page( $checkout_page_id ) )
+		$cart_page_id 		= bp_get_option( 'jigoshop_cart_page_id' 			);
+		$checkout_page_id 	= bp_get_option( 'jigoshop_checkout_page_id' 		);
+		$view_page_id 		= bp_get_option( 'jigoshop_view_order_page_id' 		);
+		$address_page_id 	= bp_get_option( 'jigoshop_edit_address_page_id' 	);
+		$account_page_id 	= bp_get_option( 'jigoshop_myaccount_page_id' 		);
+		$password_page_id 	= bp_get_option( 'jigoshop_change_password_page_id' );
+		$thanks_page_id 	= bp_get_option( 'jigoshop_thanks_page_id' 			);
+		$pay_page_id 		= bp_get_option( 'jigoshop_pay_page_id' 			);
+		$track_page_id 		= bpshop_get_tracking_page_id();
+				
+		switch( $id )
 		{
-			bp_core_redirect( bp_loggedin_user_domain() .'shop/checkout/' );
+			case $cart_page_id:
+				$link = bp_loggedin_user_domain() .'shop/cart/';
+				break;
+				
+			case $checkout_page_id:
+				$link = bp_loggedin_user_domain() .'shop/checkout/';
+				break;
+				
+			case $track_page_id:
+				$link = bp_loggedin_user_domain() .'shop/track/';
+				break;
+			
+			case $view_page_id:
+				$link = bp_loggedin_user_domain() .'shop/view/';
+				break;
+				
+			case $address_page_id:
+				$type = ( isset( $_GET['address'] ) ) ? $_GET['address'] : 'billing';
+				 
+				switch( $type )
+				{
+					case 'shipping' :
+						$ids = bp_get_option( 'bpshop_shipping_address_ids' );
+						$url = bp_loggedin_user_domain(). $bp->profile->slug .'/edit/group/'. $ids['group_id'];
+						break;
+						
+					case 'billing' :
+						$ids = bp_get_option( 'bpshop_billing_address_ids' );
+						$url = bp_loggedin_user_domain(). $bp->profile->slug .'/edit/group/'. $ids['group_id'];
+						break;
+				}
+				break;
+			
+			case $account_page_id:
+				$link = bp_loggedin_user_domain() .'shop/history/';
+				break;
+				
+			case $password_page_id:
+				$link = bp_loggedin_user_domain() . $bp->settings->slug .'/';
+				break;
+				
+			case $thanks_page_id:
+				$link = bp_loggedin_user_domain() .'shop/checkout/thanks/';
+				break;
+				
+			case $pay_page_id:
+				$link = bp_loggedin_user_domain() .'shop/checkout/pay/';
+				break;
 		}
-	}
-	
-	/**
-	 * Redirect to the profile cart to remove item
-	 *
-	 * @since 	1.0
-	 */
-	public function remove_url()
-	{
-		$cart_page_id = get_option( 'jigoshop_cart_page_id' );
-		
-		if( is_page( $cart_page_id ) && isset( $_GET['remove_item'] ) )
-		{
-			bp_core_redirect( bp_loggedin_user_domain() .'shop/cart/?remove_item='. $_GET['remove_item'] );
-		}
-	}
 
-	/**
-	 * Redirect to the profile track order page
-	 *
-	 * @todo	Direct DB querying not really save, as the pagename (order-tracking)
-	 * 			might change
-	 * @since 	1.0
-	 */
-	public function track_order()
-	{
-		global $wpdb;
-		
-		$track_page_id = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_name = 'order-tracking' LIMIT 1" ) );
-		
-		if( is_page( $track_page_id ) )
-		{
-			bp_core_redirect( bp_loggedin_user_domain() .'shop/track/' );
-		}
+		return $link;
 	}
 }
 BPSHOP_Redirect::init();

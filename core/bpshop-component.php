@@ -39,8 +39,8 @@ class BPSHOP_Component extends BP_Component {
 			'bpshop-helpers',
 			'bpshop-conditionals',
 			'bpshop-screen',
-			'bpshop-jigo-compat',
-			'bpshop-redirect'
+			'bpshop-redirect',
+			'bpshop-synch'
 		);
 		
 		foreach( $includes as $file )
@@ -127,12 +127,24 @@ class BPSHOP_Component extends BP_Component {
 
 		// Add the checkout nav item
 		$sub_nav[] = array(
+			'name'            => __( 'View order', 'bpshop' ),
+			'slug'            => 'view',
+			'parent_url'      => $shop_link,
+			'parent_slug'     => $this->slug,
+			'screen_function' => 'bpshop_screen_view_order',
+			'position'        => 40,
+			'item_css_id'     => 'shop-view',
+			'user_has_access' => bp_is_my_profile()			
+		);
+
+		// Add the checkout nav item
+		$sub_nav[] = array(
 			'name'            => __( 'Track your order', 'bpshop' ),
 			'slug'            => 'track',
 			'parent_url'      => $shop_link,
 			'parent_slug'     => $this->slug,
 			'screen_function' => 'bpshop_screen_track_order',
-			'position'        => 40,
+			'position'        => 50,
 			'item_css_id'     => 'shop-track',
 			'user_has_access' => bp_is_my_profile()			
 		);

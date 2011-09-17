@@ -19,9 +19,9 @@
 		</ul>
 	</div><!-- .item-list-tabs -->
 
-	<h3><?php _e( 'Shopping Cart', 'bpshop' ); ?></h3>
+	<h3><?php _e( 'View order', 'bpshop' ); ?></h3>
 
-	<?php echo do_shortcode( '[jigoshop_cart]' ) ?>
+	<?php echo do_shortcode( '[jigoshop_view_order]' ) ?>
 
 	<?php do_action( 'bpshop_after_member_body' ); ?>
 

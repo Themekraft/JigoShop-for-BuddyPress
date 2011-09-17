@@ -46,7 +46,10 @@ get_header( 'buddypress' ); ?>
 					
 				elseif( bpshop_is_page( 'checkout' ) ) :
 					bpshop_load_template( 'shop/member/checkout' );
-				
+
+				elseif( bpshop_is_page( 'view' ) ) :
+					bpshop_load_template( 'shop/member/view' );
+
 				else :
 					bpshop_load_template( 'shop/member/cart' );
 					

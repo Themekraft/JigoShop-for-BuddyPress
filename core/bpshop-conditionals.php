@@ -23,4 +23,17 @@ function bpshop_is_page( $page )
 	
 	return false;
 }
+
+/**
+ * Conditional to check what page the user is on
+ *
+ * @since 	1.0
+ */
+function bpshop_is_subpage( $sub )
+{
+	if( bp_is_current_component( 'shop' ) && bp_is_action_variable( $sub, 0 ) )
+		return true;
+	
+	return false;
+}
 ?>
