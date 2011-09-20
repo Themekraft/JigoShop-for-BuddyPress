@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BP Shop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-16 16:14+0100\n"
-"PO-Revision-Date: 2011-09-16 16:14+0100\n"
+"POT-Creation-Date: 2011-09-20 23:54+0100\n"
+"PO-Revision-Date: 2011-09-20 23:54+0100\n"
 "Last-Translator: Boris Glumpler <boris@shabushabu.eu>\n"
 "Language-Team: Boris Glumpler <boris@shabushabu.eu>\n"
 "MIME-Version: 1.0\n"
@@ -20,35 +20,87 @@ msgstr ""
 msgid "Jigoshop Integration"
 msgstr ""
 
-#: ../core/bpshop-component.php:80
+#: ../core/bpshop-component.php:81
 msgid "Shop"
 msgstr ""
 
-#: ../core/bpshop-component.php:93
-#: ../templates/shop/member/cart.php:22
+#: ../core/bpshop-component.php:94
+#: ../templates/shop/member/cart.php:36
 msgid "Shopping Cart"
 msgstr ""
 
-#: ../core/bpshop-component.php:105
-#: ../templates/shop/member/checkout.php:22
-msgid "Checkout"
-msgstr ""
-
-#: ../core/bpshop-component.php:117
+#: ../core/bpshop-component.php:106
 msgid "History"
 msgstr ""
 
-#: ../core/bpshop-component.php:129
-#: ../templates/shop/member/view.php:22
-msgid "View order"
-msgstr ""
-
-#: ../core/bpshop-component.php:141
+#: ../core/bpshop-component.php:118
 #: ../templates/shop/member/track.php:22
 msgid "Track your order"
 msgstr ""
 
-#: ../templates/shop/member/history.php:22
+#: ../templates/shop/member/checkout/general.php:11
+msgid "Checkout"
+msgstr ""
+
+#: ../templates/shop/member/checkout/pay.php:11
+msgid "Payment"
+msgstr ""
+
+#: ../templates/shop/member/checkout/thanks.php:11
+msgid "Thank You!"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:11
 msgid "Purchase History"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:23
+msgid "#"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:24
+msgid "Date"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:25
+msgid "Ship to"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:26
+msgid "Total"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:27
+msgid "Status"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:40
+msgid "Pay"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:41
+msgid "Cancel"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:43
+msgid "View"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:50
+msgid "No recent purchases available."
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:54
+msgid "Available downloads"
+msgstr ""
+
+#: ../templates/shop/member/history/home.php:57
+msgid " download Remaining"
+msgid_plural " downloads Remaining"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../templates/shop/member/history/view.php:11
+msgid "View order"
 msgstr ""
 

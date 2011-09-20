@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== BP Shop ===
 Contributors: travel-junkie
 Tags: buddypress, social networking, jigoshop, e-commerce
 Requires at least: WP 3.2.1, BP 1.5
@@ -8,15 +8,23 @@ Stable tag: 1.0-beta-1
 Integrates a Jigoshop installation with a BuddyPress social network
 
 == Description ==
+Takes a Jigoshop installation and moves all shopping cart and checkout pages into a users BuddyPress profile.
 
 == Installation ==
+1. Download the plugin
+2. Upload to wp-content/plugins/
+3. Activate in the backend
+4. Done... No options available!
 
 == Frequently Asked Questions ==
 
-== Screenshots ==
+= Why no options? =
+
+Because we don't need any. Jigoshop takes care of that. But maybe later...
 
 == Languages ==
-
-== Upgrade Notice ==
+* English
 
 == Changelog ==
+= v1.0 Beta =
+*initial release
