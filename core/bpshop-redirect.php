@@ -57,15 +57,27 @@ class BPSHOP_Redirect
 				break;
 				
 			case $checkout_page_id:
-				$link = bp_loggedin_user_domain() .'shop/checkout/';
+				$link = bp_loggedin_user_domain() .'shop/cart/checkout/';
 				break;
 				
+			case $thanks_page_id:
+				$link = bp_loggedin_user_domain() .'shop/cart/checkout/thanks/';
+				break;
+				
+			case $pay_page_id:
+				$link = bp_loggedin_user_domain() .'shop/cart/checkout/pay/';
+				break;
+
 			case $track_page_id:
 				$link = bp_loggedin_user_domain() .'shop/track/';
 				break;
-			
+
+			case $account_page_id:
+				$link = bp_loggedin_user_domain() .'shop/history/';
+				break;
+				
 			case $view_page_id:
-				$link = bp_loggedin_user_domain() .'shop/view/';
+				$link = bp_loggedin_user_domain() .'shop/history/view/';
 				break;
 				
 			case $address_page_id:
@@ -84,21 +96,9 @@ class BPSHOP_Redirect
 						break;
 				}
 				break;
-			
-			case $account_page_id:
-				$link = bp_loggedin_user_domain() .'shop/history/';
-				break;
-				
+
 			case $password_page_id:
 				$link = bp_loggedin_user_domain() . $bp->settings->slug .'/';
-				break;
-				
-			case $thanks_page_id:
-				$link = bp_loggedin_user_domain() .'shop/checkout/thanks/';
-				break;
-				
-			case $pay_page_id:
-				$link = bp_loggedin_user_domain() .'shop/checkout/pay/';
 				break;
 		}
 

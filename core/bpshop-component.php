@@ -103,18 +103,6 @@ class BPSHOP_Component extends BP_Component {
 
 		// Add the checkout nav item
 		$sub_nav[] = array(
-			'name'            => __( 'Checkout', 'bpshop' ),
-			'slug'            => 'checkout',
-			'parent_url'      => $shop_link,
-			'parent_slug'     => $this->slug,
-			'screen_function' => 'bpshop_screen_checkout',
-			'position'        => 20,
-			'item_css_id'     => 'shop-checkout',
-			'user_has_access' => bp_is_my_profile()
-		);
-
-		// Add the checkout nav item
-		$sub_nav[] = array(
 			'name'            => __( 'History', 'bpshop' ),
 			'slug'            => 'history',
 			'parent_url'      => $shop_link,
@@ -123,18 +111,6 @@ class BPSHOP_Component extends BP_Component {
 			'position'        => 30,
 			'item_css_id'     => 'shop-history',
 			'user_has_access' => bp_is_my_profile()
-		);
-
-		// Add the checkout nav item
-		$sub_nav[] = array(
-			'name'            => __( 'View order', 'bpshop' ),
-			'slug'            => 'view',
-			'parent_url'      => $shop_link,
-			'parent_slug'     => $this->slug,
-			'screen_function' => 'bpshop_screen_view_order',
-			'position'        => 40,
-			'item_css_id'     => 'shop-view',
-			'user_has_access' => bp_is_my_profile()			
 		);
 
 		// Add the checkout nav item

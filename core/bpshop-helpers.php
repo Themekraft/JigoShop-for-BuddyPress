@@ -81,13 +81,13 @@ function bpshop_get_tracking_page_id()
 function bpshop_exclude_pages_navigation( $args )
 {
 	$jigo_pages = array(
-		bp_get_option( 'jigoshop_cart_page_id' ),
-		bp_get_option( 'jigoshop_checkout_page_id' ),
-		bp_get_option( 'jigoshop_view_order_page_id' ),
-		bp_get_option( 'jigoshop_edit_address_page_id' ),
-		bp_get_option( 'jigoshop_myaccount_page_id' ),
-		bp_get_option( 'jigoshop_pay_page_id' ),
-		bp_get_option( 'jigoshop_thanks_page_id' ),
+		bp_get_option( 'jigoshop_cart_page_id' 			  ),
+		bp_get_option( 'jigoshop_checkout_page_id' 		  ),
+		bp_get_option( 'jigoshop_view_order_page_id' 	  ),
+		bp_get_option( 'jigoshop_edit_address_page_id' 	  ),
+		bp_get_option( 'jigoshop_myaccount_page_id' 	  ),
+		bp_get_option( 'jigoshop_pay_page_id' 			  ),
+		bp_get_option( 'jigoshop_thanks_page_id' 		  ),
 		bp_get_option( 'jigoshop_change_password_page_id' ),
 		bpshop_get_tracking_page_id()
 	);
@@ -105,9 +105,7 @@ add_filter( 'wp_page_menu_args', 'bpshop_exclude_pages_navigation' );
  */
 function bpshop_checkout_url( $url )
 {
-	$url = bp_loggedin_user_domain() .'shop/checkout/';
-	
-	return $url;
+	return bp_loggedin_user_domain() .'shop/cart/checkout/';
 }
 add_filter( 'jigoshop_get_checkout_url', 'bpshop_checkout_url' );
 ?>

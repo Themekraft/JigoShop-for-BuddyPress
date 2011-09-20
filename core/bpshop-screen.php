@@ -27,21 +27,6 @@ function bpshop_screen_shopping_cart()
 }
 
 /**
- * Screen function to display the checkout page
- * 
- * Template can be changed via the <code>bpshop_template_member_checkout</code>
- * filter hook. Note that template files can also be copied to the current theme.
- *
- * @since 	1.0
- * @uses	bp_core_load_template()
- * @uses	apply_filters()
- */
-function bpshop_screen_checkout()
-{
-	bp_core_load_template( apply_filters( 'bpshop_template_member_checkout', 'shop/member/home' ) );
-}
-
-/**
  * Screen function to display the purchase history
  * 
  * Template can be changed via the <code>bpshop_template_member_history</code>
@@ -55,22 +40,6 @@ function bpshop_screen_history()
 {
 	bp_core_load_template( apply_filters( 'bpshop_template_member_history', 'shop/member/home' ) );
 }
-
-/**
- * Screen function for tracking an order
- * 
- * Template can be changed via the <code>bpshop_template_member_view_order</code>
- * filter hook. Note that template files can also be copied to the current theme.
- *
- * @since 	1.0
- * @uses	bp_core_load_template()
- * @uses	apply_filters()
- */
-function bpshop_screen_view_order()
-{
-	bp_core_load_template( apply_filters( 'bpshop_template_member_view_order', 'shop/member/home' ) );
-}
-
 
 /**
  * Screen function for tracking an order
