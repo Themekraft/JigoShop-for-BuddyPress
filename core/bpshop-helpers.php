@@ -76,10 +76,16 @@ function bpshop_get_tracking_page_id()
  * Only used in default theme and possibly child themes
  * if no custom menu is defined for the top navigation
  * 
- * @since 1.0
+ * @since 	1.0
+ * @uses	is_user_logged_in()
+ * @uses	bp_get_option()
+ * @uses	bpshop_get_tracking_page_id()
  */
 function bpshop_exclude_pages_navigation( $args )
 {
+	if( ! is_user_logged_in() )
+		return $args;
+	
 	$jigo_pages = array(
 		bp_get_option( 'jigoshop_cart_page_id' 			  ),
 		bp_get_option( 'jigoshop_checkout_page_id' 		  ),
@@ -101,11 +107,13 @@ add_filter( 'wp_page_menu_args', 'bpshop_exclude_pages_navigation' );
 /**
  * Adjust the checkout url to point to the profile
  * 
- * @since 1.0
+ * @since 	1.0
+ * @uses	bp_loggedin_user_domain()
+ * @uses	is_user_logged_in()
  */
 function bpshop_checkout_url( $url )
 {
-	return bp_loggedin_user_domain() .'shop/cart/checkout/';
+	return ( is_user_logged_in() ) ? bp_loggedin_user_domain() .'shop/cart/checkout/' : $url;
 }
 add_filter( 'jigoshop_get_checkout_url', 'bpshop_checkout_url' );
 ?>

@@ -78,13 +78,13 @@ class BPSHOP_Component extends BP_Component {
 
 		// Add 'Shop' to the main navigation
 		$main_nav = array(
-			'name'                => __( 'Shop', 'bpshop' ),
-			'slug'                => $this->slug,
-			'position'            => 70,
-			'screen_function'     => 'bpshop_screen_shopping_cart',
-			'default_subnav_slug' => 'cart',
-			'item_css_id'         => $this->id,
-			'user_has_access' 	  => bp_is_my_profile()
+			'name'                		  => __( 'Shop', 'bpshop' ),
+			'slug'                		  => $this->slug,
+			'position'            		  => 70,
+			'screen_function'     		  => 'bpshop_screen_shopping_cart',
+			'default_subnav_slug' 		  => 'cart',
+			'item_css_id'         		  => $this->id,
+			'show_for_displayed_user' 	  => false
 		);
 
 		$shop_link = trailingslashit( $bp->loggedin_user->domain . $this->slug );
@@ -120,12 +120,12 @@ class BPSHOP_Component extends BP_Component {
 			'parent_url'      => $shop_link,
 			'parent_slug'     => $this->slug,
 			'screen_function' => 'bpshop_screen_track_order',
-			'position'        => 50,
+			'position'        => 30,
 			'item_css_id'     => 'shop-track',
 			'user_has_access' => bp_is_my_profile()			
 		);
 								
-		do_action( 'groups_setup_nav' );
+		do_action( 'bp_shop_setup_nav' );
 		
 		parent::setup_nav( $main_nav, $sub_nav );
 	}

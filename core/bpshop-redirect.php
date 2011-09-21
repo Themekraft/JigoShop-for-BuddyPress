@@ -22,10 +22,12 @@ class BPSHOP_Redirect
 	 * 			every page load (bp_get_option/get_blog_option does caching, though)
 	 * @since 	1.0
 	 * @uses	add_filter()
+	 * @uses	is_user_logged_in()
 	 */
 	public function init()
 	{
-		add_filter( 'page_link', array( __CLASS__, 'router' ), 10, 2 );
+		if( is_user_logged_in() )
+			add_filter( 'page_link', array( __CLASS__, 'router' ), 10, 2 );
 	}
 	
 	/**
