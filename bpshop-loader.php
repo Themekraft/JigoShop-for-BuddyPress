@@ -3,9 +3,9 @@
  * Plugin Name: BP Shop Integration
  * Plugin URI:  https://github.com/Themekraft/BP-Shop-Integration
  * Description: Integrates a Jigoshop installation with a BuddyPress social network
- * Author:      Boris Glumpler
+ * Author:      BP Shop Dev Team
  * Version:     1.0-beta-1
- * Author URI:  http://shabushabu.eu/
+ * Author URI:  https://github.com/Themekraft/BP-Shop-Integration
  * Network:     true
  * 
  *****************************************************************************
@@ -35,28 +35,28 @@ class BPSHOP_Loader
 	/**
 	 * The plugin version
 	 */
-	const VERSION = '1.0-beta-1';
+	const VERSION 	= '1.0-beta-1';
 	
 	/**
 	 * Minimum required WP version
 	 */
-	const MIN_WP = '3.2.1';
+	const MIN_WP 	= '3.2.1';
 	
 	/**
 	 * Minimum required BP version
 	 */
-	const MIN_BP = '1.5-beta-3';
+	const MIN_BP 	= '1.5';
 
 	/**
 	 * Minimum required Jigoshop version
 	 */
-	const MIN_JIGO = '0.9.9';
+	const MIN_JIGO 	= '0.9.9';
 		
 	/**
 	 * Minimum required PHP version
 	 */
-	const MIN_PHP = '5.2.0';
-	
+	const MIN_PHP 	= '5.2.0';
+
 	/**
 	 * Name of the plugin folder
 	 */
@@ -72,6 +72,10 @@ class BPSHOP_Loader
 	 * 
 	 * @since 	1.0
 	 * @access 	public
+	 * @uses	plugin_basename()
+	 * @uses	register_activation_hook()
+	 * @uses	register_uninstall_hook()
+	 * @uses	add_action()
 	 */
 	public function init()
 	{

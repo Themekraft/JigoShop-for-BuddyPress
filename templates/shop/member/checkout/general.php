@@ -3,8 +3,8 @@
  * @package		WordPress
  * @subpackage	BuddyPress,Jigoshop
  * @author		Boris Glumpler
- * @copyright	2010, ShabuShabu Webdesign
- * @link		http://shabushabu.eu
+ * @copyright	2011, Themekraft
+ * @link		https://github.com/Themekraft/BP-Shop-Integration
  * @license		http://www.opensource.org/licenses/gpl-2.0.php GPL License
  */
 ?>
