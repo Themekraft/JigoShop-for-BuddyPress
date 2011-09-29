@@ -50,7 +50,7 @@ if ($jigoshop_orders->orders) :
 	<p><?php _e( 'No recent purchases available.', 'bpshop' ); ?></p>
 <?php endif; ?>
 
-<?php if ($downloads = jigoshop_customer::get_downloadable_products()) : ?>
+<?php if ($downloads = BPSHOP_Downloads::get_downloadable_products()) : ?>
 <h3><?php _e('Available downloads', 'jigoshop'); ?></h3>
 <ul class="digital-downloads">
 	<?php foreach ($downloads as $download) : ?>

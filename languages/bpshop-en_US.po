@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BP Shop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 23:54+0100\n"
-"PO-Revision-Date: 2011-09-21 14:56+0100\n"
+"POT-Creation-Date: 2011-09-30 00:34-0000\n"
+"PO-Revision-Date: 2011-09-30 00:34-0000\n"
 "Last-Translator: Boris Glumpler <boris@shabushabu.eu>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,22 +20,30 @@ msgstr ""
 msgid "Jigoshop Integration"
 msgstr ""
 
-#: ../core/bpshop-component.php:81
+#: ../core/bpshop-component.php:82
 msgid "Shop"
 msgstr ""
 
-#: ../core/bpshop-component.php:94
+#: ../core/bpshop-component.php:95
 #: ../templates/shop/member/cart.php:36
 msgid "Shopping Cart"
 msgstr ""
 
-#: ../core/bpshop-component.php:106
+#: ../core/bpshop-component.php:107
 msgid "History"
 msgstr ""
 
-#: ../core/bpshop-component.php:118
+#: ../core/bpshop-component.php:119
 #: ../templates/shop/member/track.php:22
 msgid "Track your order"
+msgstr ""
+
+#: ../core/bpshop-downloads.php:41
+msgid "Time Restriction"
+msgstr ""
+
+#: ../core/bpshop-downloads.php:43
+msgid "Enter number of months a customer can download a product. Leave blank to disable."
 msgstr ""
 
 #: ../templates/shop/member/checkout/general.php:11

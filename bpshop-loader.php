@@ -63,7 +63,7 @@ class BPSHOP_Loader
 	static $plugin_name;
 
 	/**
-	 * Name of the plugin folder
+	 * Can the plugin be executed
 	 */
 	static $active = false;
 	
