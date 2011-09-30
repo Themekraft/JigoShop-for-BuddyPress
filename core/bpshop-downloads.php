@@ -43,10 +43,10 @@ class BPSHOP_Downloads
 
 			<select id="time-duration" name="time_limit[duration]">
 				<option value="">----</option>
-				<option<?php if( $limit['duration'] == 'days' ) echo ' selected="selected"'; ?> value="days"><?php _e( 'Day(s)', 'bpshop' ) ?></option>
-				<option<?php if( $limit['duration'] == 'weeks' ) echo ' selected="selected"'; ?> value="weeks"><?php _e( 'Week(s)', 'bpshop' ) ?></option>
+				<option<?php if( $limit['duration'] == 'days'   ) echo ' selected="selected"'; ?> value="days"><?php _e( 'Day(s)', 'bpshop' 	) ?></option>
+				<option<?php if( $limit['duration'] == 'weeks'  ) echo ' selected="selected"'; ?> value="weeks"><?php _e( 'Week(s)', 'bpshop' 	) ?></option>
 				<option<?php if( $limit['duration'] == 'months' ) echo ' selected="selected"'; ?> value="months"><?php _e( 'Month(s)', 'bpshop' ) ?></option>
-				<option<?php if( $limit['duration'] == 'years' ) echo ' selected="selected"'; ?> value="years"><?php _e( 'Year(s)', 'bpshop' ) ?></option>
+				<option<?php if( $limit['duration'] == 'years'  ) echo ' selected="selected"'; ?> value="years"><?php _e( 'Year(s)', 'bpshop' 	) ?></option>
 			</select>
 
 			<span class="description"><?php _e( 'Leave blank to disable.', 'bpshop' ) ?></span>
@@ -68,6 +68,8 @@ class BPSHOP_Downloads
 	
 	/**
 	 * Get the proper duration word
+	 * 
+	 * Probably not needed, but applies to a geeks sense of neatness
 	 * 
 	 * @since 	1.0
 	 * @access 	private
@@ -104,10 +106,12 @@ class BPSHOP_Downloads
 	 * 
 	 * Based on jigoshop_customer::get_downloadable_products()
 	 * Should really be done via a filter and should probably be its own plugin
+	 * as it's BuddyPress agnostic
 	 * 
 	 * @since 	1.0
 	 * @access 	private
 	 * @todo	Pull request for Jigoshop team
+	 * 			Need to check if downloads are manually accessible (should be handled by Jigoshop, really)
 	 */
 	public function get_downloadable_products()
 	{
@@ -137,7 +141,9 @@ class BPSHOP_Downloads
 							$_product = &new jigoshop_product( $result->product_id );
 							
 							// we check for an existing time limit here and maybe prevent
-							// the product from being added to the available products
+							// the product from being added to the available products							
+							$downloadable_until = false;
+							
 							if( $limit = get_post_meta( $_product->id, 'time_limit', true ) ) :
 								$duration = self::get_duration( $limit['duration'], $limit['length'] );							
 								$downloadable_until = strtotime( '+'. $limit['length'] .' '. $duration , strtotime( $order->order_date ) );
@@ -149,15 +155,16 @@ class BPSHOP_Downloads
 							if ($_product->exists) :
 								$download_name = $_product->get_title();
 							else :
-								$download_name = '#' . $result->product_id;
+								$download_name = '#'. $result->product_id;
 							endif;
 							
 							$downloads[] = array(
-								'download_url' 		  => add_query_arg('download_file', $result->product_id, add_query_arg( 'order', $result->order_key, add_query_arg( 'email', $user_info->user_email, home_url() ) ) ),
+								'download_url' 		  => add_query_arg( 'download_file', $result->product_id, add_query_arg( 'order', $result->order_key, add_query_arg( 'email', $user_info->user_email, home_url() ) ) ),
 								'product_id' 		  => $result->product_id,
 								'download_name' 	  => $download_name,
 								'order_key' 		  => $result->order_key,
-								'downloads_remaining' => $result->downloads_remaining
+								'downloads_remaining' => $result->downloads_remaining,
+								'download_duration'	  => ( ( $downloadable_until ) ? gmdate( get_option( 'date_format' ), $downloadable_until ) : false )
 							);
 						endforeach;
 					endif;						

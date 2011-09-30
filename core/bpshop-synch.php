@@ -39,6 +39,7 @@ function bpshop_synch_addresses( $field_id, $value )
 	unset( $shipping['group_id'] );
 	unset( $billing['group_id']  );
 
+	// change $$context to something else and the sky will fall on your head
 	$key = array_search( $field_id, $$context );
 
 	if( ! $key )

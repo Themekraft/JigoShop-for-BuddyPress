@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: BP Shop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-30 19:55-0000\n"
-"PO-Revision-Date: 2011-09-30 19:55-0000\n"
+"PO-Revision-Date: 2011-09-30 20:02-0000\n"
 "Last-Translator: Boris Glumpler <boris@shabushabu.eu>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,142 +18,142 @@ msgstr ""
 
 #: ../core/bpshop-component.php:26
 msgid "Jigoshop Integration"
-msgstr ""
+msgstr "Jigoshop Integration"
 
 #: ../core/bpshop-component.php:82
 msgid "Shop"
-msgstr ""
+msgstr "Shop"
 
 #: ../core/bpshop-component.php:95
 #: ../templates/shop/member/cart.php:36
 msgid "Shopping Cart"
-msgstr ""
+msgstr "Warenkorb"
 
 #: ../core/bpshop-component.php:107
 msgid "History"
-msgstr ""
+msgstr "Historie"
 
 #: ../core/bpshop-component.php:119
 #: ../templates/shop/member/track.php:22
 msgid "Track your order"
-msgstr ""
+msgstr "Bestellung nachverfolgen"
 
 #: ../core/bpshop-downloads.php:41
 msgid "Time Restriction"
-msgstr ""
+msgstr "Zeitbeschr&auml;nkung"
 
 #: ../core/bpshop-downloads.php:46
 msgid "Day(s)"
-msgstr ""
+msgstr "Tag(e)"
 
 #: ../core/bpshop-downloads.php:47
 msgid "Week(s)"
-msgstr ""
+msgstr "Woche(n)"
 
 #: ../core/bpshop-downloads.php:48
 msgid "Month(s)"
-msgstr ""
+msgstr "Monat(e)"
 
 #: ../core/bpshop-downloads.php:49
 msgid "Year(s)"
-msgstr ""
+msgstr "Jahr(e)"
 
 #: ../core/bpshop-downloads.php:52
 msgid "Leave blank to disable."
-msgstr ""
+msgstr "Frei lassen um es abzustellen."
 
 #: ../core/bpshop-downloads.php:85
 msgid "day"
 msgid_plural "days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "day"
+msgstr[1] "days"
 
 #: ../core/bpshop-downloads.php:89
 msgid "week"
 msgid_plural "weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "week"
+msgstr[1] "weeks"
 
 #: ../core/bpshop-downloads.php:93
 msgid "month"
 msgid_plural "months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "month"
+msgstr[1] "months"
 
 #: ../core/bpshop-downloads.php:97
 msgid "year"
 msgid_plural "years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "year"
+msgstr[1] "years"
 
 #: ../templates/shop/member/checkout/general.php:11
 msgid "Checkout"
-msgstr ""
+msgstr "Checkout"
 
 #: ../templates/shop/member/checkout/pay.php:11
 msgid "Payment"
-msgstr ""
+msgstr "Bezahlung"
 
 #: ../templates/shop/member/checkout/thanks.php:11
 msgid "Thank You!"
-msgstr ""
+msgstr "Danke Sehr!"
 
 #: ../templates/shop/member/history/home.php:11
 msgid "Purchase History"
-msgstr ""
+msgstr "Einkaufs Historie"
 
 #: ../templates/shop/member/history/home.php:22
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: ../templates/shop/member/history/home.php:23
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: ../templates/shop/member/history/home.php:24
 msgid "Ship to"
-msgstr ""
+msgstr "Liefern an"
 
 #: ../templates/shop/member/history/home.php:25
 msgid "Total"
-msgstr ""
+msgstr "Gesamt"
 
 #: ../templates/shop/member/history/home.php:26
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: ../templates/shop/member/history/home.php:39
 msgid "Pay"
-msgstr ""
+msgstr "Bezahlen"
 
 #: ../templates/shop/member/history/home.php:40
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: ../templates/shop/member/history/home.php:42
 msgid "View"
-msgstr ""
+msgstr "Ansehen"
 
 #: ../templates/shop/member/history/home.php:49
 msgid "No recent purchases available."
-msgstr ""
+msgstr "Keine k&uuml;rzlichen Eink&auml;ufe vorhanden."
 
 #: ../templates/shop/member/history/home.php:53
 msgid "Available downloads"
-msgstr ""
+msgstr "Verf&uuml;gbare Downloads"
 
 #: ../templates/shop/member/history/home.php:59
 msgid " download Remaining"
 msgid_plural " downloads Remaining"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " Download &uuml;brig"
+msgstr[1] " Downloads &uuml;brig"
 
 #: ../templates/shop/member/history/home.php:67
 #, php-format
 msgid "Can be downloaded until %s"
-msgstr ""
+msgstr "Kann bis %s heruntergeladen werden."
 
 #: ../templates/shop/member/history/view.php:11
 msgid "View order"
-msgstr ""
+msgstr "Bestellung ansehen"
 

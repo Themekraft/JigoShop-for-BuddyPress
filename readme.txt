@@ -9,6 +9,7 @@ Integrates a Jigoshop installation with a BuddyPress social network
 
 == Description ==
 Takes a Jigoshop installation and moves all shopping cart and checkout pages into a users BuddyPress profile.
+Adds a time-based option for downloadable products.
 
 == Installation ==
 1. Download the plugin
@@ -24,6 +25,7 @@ Because we don't need any. Jigoshop takes care of that. But maybe later...
 
 == Languages ==
 * English
+* German
 
 == Changelog ==
 = v1.0 Beta =

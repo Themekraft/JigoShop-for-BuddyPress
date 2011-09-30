@@ -100,7 +100,7 @@ function bpshop_exclude_pages_navigation( $args )
 	
 	$args['exclude'] = join( ',', $jigo_pages );
 	
-	return $args;
+	return apply_filters( 'bpshop_exclude_pages_navigation', $args, $jigo_pages );
 }
 add_filter( 'wp_page_menu_args', 'bpshop_exclude_pages_navigation' );
 
@@ -113,7 +113,7 @@ add_filter( 'wp_page_menu_args', 'bpshop_exclude_pages_navigation' );
  */
 function bpshop_checkout_url( $url )
 {
-	return ( is_user_logged_in() ) ? bp_loggedin_user_domain() .'shop/cart/checkout/' : $url;
+	return ( is_user_logged_in() ) ? apply_filters( 'bpshop_checkout_url', bp_loggedin_user_domain() .'shop/cart/checkout/' ) : $url;
 }
 add_filter( 'jigoshop_get_checkout_url', 'bpshop_checkout_url' );
 ?>

@@ -23,7 +23,7 @@ if( ! defined( 'ABSPATH' ) ) exit;
  */
 function bpshop_screen_shopping_cart()
 {
-	bp_core_load_template( apply_filters( 'bpshop_template_member_home', 'shop/member/home' ) );
+	bp_core_load_template( apply_filters( 'bpshop_template_member_shopping_cart', 'shop/member/home' ) );
 }
 
 /**

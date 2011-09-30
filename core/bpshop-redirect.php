@@ -104,7 +104,7 @@ class BPSHOP_Redirect
 				break;
 		}
 
-		return $link;
+		return apply_filters( 'bpshop_router_link', $link );
 	}
 }
 BPSHOP_Redirect::init();
