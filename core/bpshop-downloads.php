@@ -109,7 +109,7 @@ class BPSHOP_Downloads
 	 * 
 	 * Based on jigoshop_customer::get_downloadable_products()
 	 * Should really be done via a filter and should probably be its own plugin
-	 * as it's BuddyPress agnostic
+	 * as it's BuddyPress independant
 	 * 
 	 * @since 	1.0
 	 * @access 	public
