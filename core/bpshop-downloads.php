@@ -35,12 +35,21 @@ class BPSHOP_Downloads
 	{
 		global $post;
 		
-		$restriction = get_post_meta( $post->ID, 'time_limit', true );
+		$limit = (array) get_post_meta( $post->ID, 'time_limit', true );
 		?>
 		<p class="form-field">
 			<label for="time-limit"><?php _e( 'Time Restriction', 'bpshop' ) ?></label>
-			<input type="text" class="short" name="time_limit" id="time-limit" value="<?php echo esc_attr( $restriction ) ?>" />
-			<span class="description"><?php _e( 'Enter number of months a customer can download a product. Leave blank to disable.', 'bpshop' ) ?></span>
+			<input type="text" class="short" name="time_limit[length]" id="time-length" value="<?php echo esc_attr( $limit['length'] ) ?>" />
+
+			<select id="time-duration" name="time_limit[duration]">
+				<option value="">----</option>
+				<option<?php if( $limit['duration'] == 'days' ) echo ' selected="selected"'; ?> value="days"><?php _e( 'Day(s)', 'bpshop' ) ?></option>
+				<option<?php if( $limit['duration'] == 'weeks' ) echo ' selected="selected"'; ?> value="weeks"><?php _e( 'Week(s)', 'bpshop' ) ?></option>
+				<option<?php if( $limit['duration'] == 'months' ) echo ' selected="selected"'; ?> value="months"><?php _e( 'Month(s)', 'bpshop' ) ?></option>
+				<option<?php if( $limit['duration'] == 'years' ) echo ' selected="selected"'; ?> value="years"><?php _e( 'Year(s)', 'bpshop' ) ?></option>
+			</select>
+
+			<span class="description"><?php _e( 'Leave blank to disable.', 'bpshop' ) ?></span>
 		</p>
 		<?php
 	}
@@ -53,8 +62,41 @@ class BPSHOP_Downloads
 	 */
 	function save_time_option( $post_id )
 	{	
-		if( isset( $_POST['time_limit'] ) && absint( $_POST['time_limit'] ) > 0 )
-			update_post_meta( $post_id, 'time_limit', absint( $_POST['time_limit'] ) );
+		if( isset( $_POST['time_limit']['length'] ) && absint( $_POST['time_limit']['length'] ) > 0 && isset( $_POST['time_limit']['duration'] ) && in_array( $_POST['time_limit']['duration'], array( 'days', 'weeks', 'months', 'years' ) ) )
+			update_post_meta( $post_id, 'time_limit', $_POST['time_limit'] );
+	}
+	
+	/**
+	 * Get the proper duration word
+	 * 
+	 * @since 	1.0
+	 * @access 	private
+	 */
+	function get_duration( $duration = false, $length = false )
+	{
+		if( ! $duration || ! $length )
+			return false;
+		
+		switch( $duration )
+		{
+			case 'days':
+				$duration = _n( 'day', 'days', $length );
+				break;
+
+			case 'weeks':
+				$duration = _n( 'week', 'weeks', $length );
+				break;
+				
+			case 'months':
+				$duration = _n( 'month', 'months', $length );
+				break;
+				
+			case 'years':
+				$duration = _n( 'year', 'years', $length );
+				break;
+		}
+		
+		return $duration;
 	}
 	
 	/**
@@ -96,8 +138,9 @@ class BPSHOP_Downloads
 							
 							// we check for an existing time limit here and maybe prevent
 							// the product from being added to the available products
-							if( $time_limit = get_post_meta( $_product->id, 'time_limit', true ) ) :								
-								$downloadable_until = strtotime( '+'. $time_limit .' months', strtotime( $order->order_date ) );
+							if( $limit = get_post_meta( $_product->id, 'time_limit', true ) ) :
+								$duration = self::get_duration( $limit['duration'], $limit['length'] );							
+								$downloadable_until = strtotime( '+'. $limit['length'] .' '. $duration , strtotime( $order->order_date ) );
 								
 								if( $downloadable_until < strtotime( 'now' ) )
 									continue;
