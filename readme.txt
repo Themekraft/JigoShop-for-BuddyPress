@@ -26,7 +26,3 @@ Because we don't need any. Jigoshop takes care of that. But maybe later...
 == Languages ==
 * English
 * German
-
-== Changelog ==
-= v1.0 Beta =
-*initial release
