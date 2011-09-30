@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BP Shop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-30 19:55-0000\n"
-"PO-Revision-Date: 2011-09-30 20:09-0000\n"
+"POT-Creation-Date: 2011-09-30 20:56-0000\n"
+"PO-Revision-Date: 2011-09-30 20:58-0000\n"
 "Last-Translator: Boris Glumpler <boris@shabushabu.eu>\n"
 "Language-Team: Boris Glumpler <boris@shabushabu.eu>\n"
 "MIME-Version: 1.0\n"
@@ -40,53 +40,74 @@ msgstr "Historie"
 msgid "Track your order"
 msgstr "Bestellung nachverfolgen"
 
-#: ../core/bpshop-downloads.php:41
+#: ../core/bpshop-downloads.php:44
 msgid "Time Restriction"
 msgstr "Zeitbeschr&auml;nkung"
 
-#: ../core/bpshop-downloads.php:46
+#: ../core/bpshop-downloads.php:49
 msgid "Day(s)"
 msgstr "Tag(e)"
 
-#: ../core/bpshop-downloads.php:47
+#: ../core/bpshop-downloads.php:50
 msgid "Week(s)"
 msgstr "Woche(n)"
 
-#: ../core/bpshop-downloads.php:48
+#: ../core/bpshop-downloads.php:51
 msgid "Month(s)"
 msgstr "Monat(e)"
 
-#: ../core/bpshop-downloads.php:49
+#: ../core/bpshop-downloads.php:52
 msgid "Year(s)"
 msgstr "Jahr(e)"
 
-#: ../core/bpshop-downloads.php:52
+#: ../core/bpshop-downloads.php:55
 msgid "Leave blank to disable."
 msgstr "Frei lassen um es abzustellen."
 
-#: ../core/bpshop-downloads.php:85
+#: ../core/bpshop-downloads.php:88
 msgid "day"
 msgid_plural "days"
 msgstr[0] "day"
 msgstr[1] "days"
 
-#: ../core/bpshop-downloads.php:89
+#: ../core/bpshop-downloads.php:92
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] "week"
 msgstr[1] "weeks"
 
-#: ../core/bpshop-downloads.php:93
+#: ../core/bpshop-downloads.php:96
 msgid "month"
 msgid_plural "months"
 msgstr[0] "month"
 msgstr[1] "months"
 
-#: ../core/bpshop-downloads.php:97
+#: ../core/bpshop-downloads.php:100
 msgid "year"
 msgid_plural "years"
 msgstr[0] "year"
 msgstr[1] "years"
+
+#: ../core/bpshop-downloads.php:228
+#, php-format
+msgid "The time limit for this file has been reached and it cannot be downloaded any more. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr "Das Zeitlimit f&uuml;r diese Datei wurde erreicht und sie kannn nicht mehr heruntergeladen werden. <a href=\"%s\">Zur Startseite &rarr;</a>"
+
+#: ../core/bpshop-downloads.php:233
+#: ../core/bpshop-downloads.php:253
+#, php-format
+msgid "File not found. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr "Datei wurde nicht gefunden. <a href=\"%s\">Zur Startseite &rarr;</a>"
+
+#: ../core/bpshop-downloads.php:235
+#, php-format
+msgid "Sorry, you have reached your download limit for this file. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr "Leider hast Du das Download-Limit f&uuml;r diese Datei erreicht. <a href=\"%s\">Zur Startseite &rarr;</a>"
+
+#: ../core/bpshop-downloads.php:326
+#, php-format
+msgid " File not found. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr "Datei wurde nicht gefunden. <a href=\"%s\">Zur Startseite &rarr;</a>"
 
 #: ../templates/shop/member/checkout/general.php:11
 msgid "Checkout"

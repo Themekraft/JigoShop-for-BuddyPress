@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BP Shop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-30 19:55-0000\n"
-"PO-Revision-Date: 2011-09-30 19:55-0000\n"
+"POT-Creation-Date: 2011-09-30 20:56-0000\n"
+"PO-Revision-Date: 2011-09-30 20:56-0000\n"
 "Last-Translator: Boris Glumpler <boris@shabushabu.eu>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,53 +38,74 @@ msgstr ""
 msgid "Track your order"
 msgstr ""
 
-#: ../core/bpshop-downloads.php:41
+#: ../core/bpshop-downloads.php:44
 msgid "Time Restriction"
 msgstr ""
 
-#: ../core/bpshop-downloads.php:46
+#: ../core/bpshop-downloads.php:49
 msgid "Day(s)"
 msgstr ""
 
-#: ../core/bpshop-downloads.php:47
+#: ../core/bpshop-downloads.php:50
 msgid "Week(s)"
 msgstr ""
 
-#: ../core/bpshop-downloads.php:48
+#: ../core/bpshop-downloads.php:51
 msgid "Month(s)"
 msgstr ""
 
-#: ../core/bpshop-downloads.php:49
+#: ../core/bpshop-downloads.php:52
 msgid "Year(s)"
 msgstr ""
 
-#: ../core/bpshop-downloads.php:52
+#: ../core/bpshop-downloads.php:55
 msgid "Leave blank to disable."
 msgstr ""
 
-#: ../core/bpshop-downloads.php:85
+#: ../core/bpshop-downloads.php:88
 msgid "day"
 msgid_plural "days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../core/bpshop-downloads.php:89
+#: ../core/bpshop-downloads.php:92
 msgid "week"
 msgid_plural "weeks"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../core/bpshop-downloads.php:93
+#: ../core/bpshop-downloads.php:96
 msgid "month"
 msgid_plural "months"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../core/bpshop-downloads.php:97
+#: ../core/bpshop-downloads.php:100
 msgid "year"
 msgid_plural "years"
 msgstr[0] ""
 msgstr[1] ""
+
+#: ../core/bpshop-downloads.php:228
+#, php-format
+msgid "The time limit for this file has been reached and it cannot be downloaded any more. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr ""
+
+#: ../core/bpshop-downloads.php:233
+#: ../core/bpshop-downloads.php:253
+#, php-format
+msgid "File not found. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr ""
+
+#: ../core/bpshop-downloads.php:235
+#, php-format
+msgid "Sorry, you have reached your download limit for this file. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr ""
+
+#: ../core/bpshop-downloads.php:326
+#, php-format
+msgid " File not found. <a href=\"%s\">Go to homepage &rarr;</a>"
+msgstr ""
 
 #: ../templates/shop/member/checkout/general.php:11
 msgid "Checkout"
