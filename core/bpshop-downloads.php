@@ -21,11 +21,13 @@ class BPSHOP_Downloads
 	 */
 	public function init()
 	{
+		// remove Jigoshop function
 		remove_action( 'init', 'jigoshop_download_product' );
-		
+		// then add it back in
+		add_action( 'init', 										array( __CLASS__, 'download_product' )	  );
+
 		add_action( 'additional_downloadable_product_type_options', array( __CLASS__, 'add_time_option'  ) 	  );
 		add_action( 'save_post', 									array( __CLASS__, 'save_time_option' ), 1 );
-		add_action( 'init', 										array( __CLASS__, 'download_product' )	  );
 	}
 	
 	/**
@@ -235,12 +237,12 @@ class BPSHOP_Downloads
 	            wp_die( sprintf( __( 'Sorry, you have reached your download limit for this file. <a href="%s">Go to homepage &rarr;</a>', 'jigoshop' ), home_url() ) );
 			else :
 				if( $downloads_remaining > 0 ) :
-					$wpdb->update( $wpdb->prefix ."jigoshop_downloadable_product_permissions", array(
+					$wpdb->update( $wpdb->prefix .'jigoshop_downloadable_product_permissions', array(
 						'downloads_remaining' => $downloads_remaining - 1,
 					), array(
-						'user_email' 	=> $email,
-						'order_key'		=> $order,
-						'product_id' 	=> $download_file
+						'user_email' 		  => $email,
+						'order_key'			  => $order,
+						'product_id' 		  => $download_file
 					), array( '%d' ), array( '%s', '%s', '%d' ) );
 				endif;
 	
@@ -323,7 +325,7 @@ class BPSHOP_Downloads
 				header( "Content-Transfer-Encoding: binary" );
 	
 	            header( "Content-Length: ". @filesize( $file_path ) );
-	            @readfile( "$file_path" ) or wp_die( sprintf(__(' File not found. <a href="%s">Go to homepage &rarr;</a>', 'jigoshop' ), home_url() ) );
+	            @readfile( "$file_path" ) or wp_die( sprintf(__( ' File not found. <a href="%s">Go to homepage &rarr;</a>', 'jigoshop' ), home_url() ) );
 				exit;
 			endif;
 		endif;
