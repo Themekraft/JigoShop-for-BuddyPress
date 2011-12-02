@@ -1,2 +1,5 @@
+= v1.1 =
+*Changed: Load order
+
 = v1.0 =
 *initial release
