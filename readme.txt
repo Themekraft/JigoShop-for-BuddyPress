@@ -1,4 +1,4 @@
-=== BP Shop ===
+=== JigoShop for Buddypress ===
 Contributors: travel-junkie
 Tags: buddypress, social networking, jigoshop, e-commerce
 Requires at least: WP 3.2.1, BP 1.5
