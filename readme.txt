@@ -3,7 +3,11 @@ Contributors: travel-junkie
 Tags: buddypress, social networking, jigoshop, e-commerce
 Requires at least: WP 3.2.1, BP 1.5
 Tested up to: WP 3.2.1, BP 1.5
+<<<<<<< HEAD
 Stable tag: 1.1
+=======
+Stable tag: 1.0
+>>>>>>> 6ccd1e1329d61fd39b62a672f965ebd4ad1335ef
 
 Integrates a Jigoshop installation with a BuddyPress social network
 
