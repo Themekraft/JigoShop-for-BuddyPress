@@ -1,20 +1,11 @@
 <?php
 /**
-<<<<<<< HEAD
  * Plugin Name: JigoShop for Buddypress
  * Plugin URI:  https://github.com/Themekraft/JigoShop-for-BuddyPress/
  * Description: Integrates a Jigoshop installation with a BuddyPress social network
  * Author:      JigoShop for BuddyPress Dev Team
  * Version:     1.1
  * Author URI:  https://github.com/Themekraft/JigoShop-for-BuddyPress/
-=======
- * Plugin Name: JigoShop for BuddyPress
- * Plugin URI:  https://github.com/Themekraft/BP-Shop-Integration
- * Description: Integrates a Jigoshop installation with a BuddyPress social network
- * Author:      JigoShop for BuddyPress Dev Team
- * Version:     1.0
- * Author URI:  https://github.com/Themekraft/BP-Shop-Integration
->>>>>>> 6ccd1e1329d61fd39b62a672f965ebd4ad1335ef
  * Network:     true
  * 
  *****************************************************************************
